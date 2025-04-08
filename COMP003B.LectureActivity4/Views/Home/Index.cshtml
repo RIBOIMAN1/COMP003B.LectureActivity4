@@ -1,8 +1,13 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<Article>
+
+@{
+    ViewData["Title"] = "Articles";
+    Layout = "_Layout";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>Articles</h2>
+
+@foreach (var article in Model)
+{
+    <partial name="_ArticleCard" model="article" />
+}
